@@ -1,0 +1,495 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(223, 229, 232, 1);; /* Modify as per your color scheme */
+}
+
+.logo img {
+    max-width: 100%; /* Ensures the logo is responsive */
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    padding: 0 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: rgba(54, 61, 71, 1);
+    text-transform: uppercase;
+}
+
+/* Styles specific to mobile and burger icon */
+.burger {
+    display: none; /* Burger is hidden on larger screens */
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px; /* Width of each line of the burger menu */
+    height: 3px; /* Height of each line */
+    background-color: #333;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/*Footer styles*/
+footer {
+    background-color: rgba(54, 61, 71, 1);
+    padding: 1%;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-nav {
+    text-align: right;
+}
+
+.footer-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-nav ul li {
+    display: inline-block; 
+    margin-left: 20px;
+}
+.footer-nav ul li a{
+    text-decoration: none;
+    color: rgba(223, 229, 232, 1);
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.675rem;
+}
+
+.footer-nav ul li:first-child {
+    margin-left: 0;
+}
+
+hr {
+    border: none;
+    border-top: 3px solid rgba(223, 229, 232, 1);
+    margin: 2% 0;
+}
+
+.footer-copyright {
+    text-align: right;
+    font-size: 0.675rem;
+    color: rgba(223, 229, 232, 1);
+}
+
+@media screen and (max-width:600px){
+/*Navigation - Hamburger*/
+.nav-links {
+    position: absolute;
+    right: 0;
+    height: 0;
+    top: 60px; /* Adjust based on your header's height */
+    background-color: rgba(54, 61, 71, 1);
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    transition: height 0.5s ease;
+    z-index: 100;
+}
+
+.nav-links li {
+    padding: 15px 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-links li a{
+  color: rgba(223, 229, 232, 1);
+}
+
+.burger {
+    display: block;
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/*Layout*/
+main {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: 1fr;
+    overflow-y: auto; 
+}
+
+/*mission*/
+.video-placeholder video {
+    width: 90%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.mission-statement{
+    background-color: rgba(223, 229, 232, 1);
+    align-items: center;
+    text-align: center;
+}
+
+/*Key offerings*/
+
+.key-offerings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(223, 229, 232, 1);
+}
+
+.offering {
+    text-align: center;
+    margin-bottom: 2%; /* Space between offerings */
+}
+
+.offering img {
+    width: 10%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+/*Partners*/
+
+.partners{
+    background-color: rgba(145, 178, 189, 1);
+}
+
+.scroll-container {
+    width: 100%;
+    position: relative;
+}
+
+.partners-logo {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform; /* Optimizes animations */
+}
+
+.partner {
+    min-width: 100%; /* Ensures each icon takes up the full width of the container */
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px; /* Add padding for spacing */
+}
+
+.partner img {
+    width: 100px; /* Specific size for partner logos */
+    height: auto;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: transparent;
+    color: rgba(54, 61, 71, 1);
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.button.prev {
+    left: 10px;
+}
+
+.button.next {
+    right: 10px;
+}
+
+
+/*CEO*/
+.Alasdair {
+    background-color:  rgba(223, 229, 232, 1);
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content vertically */
+}
+
+.profile-photo {
+    margin-bottom: 2%; /* Space below the photo */
+}
+
+.linkedin-icon {
+    margin-bottom: 2%; /* Space below the icon before text */
+}
+
+.profile-details p {
+    text-align: center; /* Center-align text */
+    padding: 10% 10% 10% 10%;
+}
+
+.profile-details {
+    background-color: rgba(242, 242, 242, 1);
+    margin: 10% 10% 10% 10%;
+}
+
+}
+
+@media screen and (min-width:601px) and (max-width:900px){
+/*Layout*/
+main {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: 1fr;
+    overflow-y: auto; 
+}
+
+/*mission*/
+
+h1 {
+    color: rgba(54, 61, 71, 1);
+    margin-top: 5%;
+}
+
+.video-placeholder video {
+    width: 90%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.mission-statement{
+    background-color: rgba(223, 229, 232, 1);
+    align-items: center;
+    text-align: center;
+}
+
+.mission-statement p{
+    padding: 2% 10% 2% 10%;
+}
+
+/*Key offerings*/
+.key-offerings{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(223, 229, 232, 1);
+}
+
+.offering {
+    text-align: center;
+    padding: 2% 2%;
+}
+
+.offering img {
+    width: 20%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+/*Partners*/
+.partners{
+    background-color: rgba(145, 178, 189, 1);
+    align-items: center;
+    text-align: center;
+}
+
+h2 {
+    color: rgba(54, 61, 71, 1);
+    margin-top: 2%;
+}
+
+.partners p {
+    padding: 2% 10% 2% 10%;
+}
+
+.button {
+    display: none;
+}
+
+.partners-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+/*CEO*/
+.Alasdair {
+    background-color:  rgba(223, 229, 232, 1);
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.profile-photo {
+    width: 50%;
+    height: 50%;
+    padding: 2% 2% 2% 2%;
+}
+
+.profile-details{
+    width: 50%;
+    height: auto;
+    padding: 2% 2% 2% 2%;
+
+}
+
+}
+
+@media screen and (min-width:901px){
+/*Layout*/
+main {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: 1fr;
+    overflow-y: auto; 
+}
+
+/*mission*/
+
+h1 {
+    color: rgba(54, 61, 71, 1);
+    margin-top: 5%;
+}
+
+.video-placeholder video {
+    width: 70%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.mission-statement{
+    background-color: rgba(223, 229, 232, 1);
+    align-items: center;
+    text-align: center;
+}
+
+.mission-statement p{
+    padding: 1% 5% 1% 5%;
+}
+
+/*Key offerings*/
+.key-offerings{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(223, 229, 232, 1);
+}
+
+.offering {
+    text-align: center;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+}
+
+.offering img {
+    width: 15%;
+    height: auto;
+    margin-bottom: 1%;
+}
+
+/*Partners*/
+.partners{
+    background-color: rgba(145, 178, 189, 1);
+    align-items: center;
+    text-align: center;
+}
+
+h2 {
+    color: rgba(54, 61, 71, 1);
+    margin-top: 2%;
+}
+
+.partners p {
+    padding: 2% 10% 2% 10%;
+}
+
+.button {
+    display: none;
+}
+
+.partners-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+/*CEO*/
+.Alasdair {
+    background-color:  rgba(223, 229, 232, 1);
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.profile-photo {
+    width: 50%;
+    height: 50%;
+    padding: 2% 2% 2% 2%;
+}
+
+.profile-details{
+    width: 50%;
+    height: auto;
+    padding: 2% 2% 2% 2%;
+
+}
+}
